@@ -1,0 +1,16 @@
+[
+{
+  "modid": "dexutils",
+  "name": "DexUtils",
+  "description": "A utility mod for Dextopia modpacks",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Furt"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": [""]
+}
+]

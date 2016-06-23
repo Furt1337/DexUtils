@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": { "model": "dexutils:citrine_block" }
+    }
+}

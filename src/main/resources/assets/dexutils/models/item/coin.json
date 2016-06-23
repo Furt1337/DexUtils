@@ -1,0 +1,6 @@
+{
+	"parent":"dexutils:item/itembase",
+	"textures": {
+		"layer0":"dexutils:items/coin"
+	}
+}
