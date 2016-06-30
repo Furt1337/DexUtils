@@ -62,7 +62,7 @@ public class Home {
 		return db.removeEntry(index);
 	}
 	
-	// TODO
+	// TODO implement home list
 	public void getHomeList() {}
 	
 	public String getPlayerName() {
