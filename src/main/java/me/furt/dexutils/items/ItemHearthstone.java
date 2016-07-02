@@ -26,30 +26,34 @@ public class ItemHearthstone extends Item {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn,
 			World worldIn, EntityPlayer playerIn, EnumHand hand) {
-		// TODO this should only happen once and not get spammed
-		if (hand.equals(EnumHand.MAIN_HAND)) {
-			Home h = new Home(playerIn, "home");
-			if (playerIn.isSneaking()) {
-				h.setHome();
-				playerIn.addChatMessage(new TextComponentString(
-						TextFormatting.GOLD + "Home location is set."));
-			} else {
-				Location l = h.getHome();
-				if (l != null) {
-					playerIn.setPositionAndUpdate(l.getX(), l.getY(), l.getZ());
+		if (!worldIn.isRemote) {
+			if (hand.equals(EnumHand.MAIN_HAND)) {
+				Home h = new Home(playerIn, "home");
+				if (playerIn.isSneaking()) {
+					h.setHome();
 					playerIn.addChatMessage(new TextComponentString(
-							TextFormatting.GOLD + "Teleporting to home location."));
+							TextFormatting.GOLD + "Home location is set."));
 				} else {
-					playerIn.addChatMessage(new TextComponentString(
-							TextFormatting.GOLD + "Home location is not set."));
-					playerIn.addChatMessage(new TextComponentString(
-							TextFormatting.GOLD
-									+ "To set home hold shift and right click."));
+					Location l = h.getHome();
+					if (l != null) {
+						playerIn.setPositionAndUpdate(l.getX(), l.getY(),
+								l.getZ());
+						playerIn.addChatMessage(new TextComponentString(
+								TextFormatting.GOLD
+										+ "Teleporting to home location."));
+					} else {
+						playerIn.addChatMessage(new TextComponentString(
+								TextFormatting.GOLD
+										+ "Home location is not set."));
+						playerIn.addChatMessage(new TextComponentString(
+								TextFormatting.GOLD
+										+ "To set home hold shift and right click."));
+					}
 				}
-			}
 
-			h.destroy();
-			return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
+				h.destroy();
+				return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
+			}
 		}
 		return new ActionResult(EnumActionResult.PASS, itemStackIn);
 	}

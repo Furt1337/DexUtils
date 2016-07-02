@@ -10,12 +10,12 @@ public class ModBlocks {
 	public static Block citrine_ore = new BaseDrop(1.0F, 3.0F, "pickaxe", 1, 0F, Material.ROCK, ModItems.citrine_gem).setUnlocalizedName("citrine_ore");
 	public static Block citrine_block = new BlockBase(1.0F, 3.0F, "pickaxe", 1, 0F, Material.ROCK).setUnlocalizedName("citrine_block");
 	public static void registerBlocks() {
-		RegisterHelper.registerBlock(citrine_ore);
-		RegisterHelper.registerBlock(citrine_block);
+		//RegisterHelper.registerBlock(citrine_ore);
+		//RegisterHelper.registerBlock(citrine_block);
 	}
 
 	public static void registerBlockRenderer() {
-		RegisterHelper.registerBlockRenderer(citrine_ore);
-		RegisterHelper.registerBlockRenderer(citrine_block);
+		//RegisterHelper.registerBlockRenderer(citrine_ore);
+		//RegisterHelper.registerBlockRenderer(citrine_block);
 	}
 }

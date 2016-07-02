@@ -15,13 +15,13 @@ public class ModItems {
 
 	public static void registerItems() {
 		RegisterHelper.registerItem(hearthstone);
-		RegisterHelper.registerItem(citrine_gem);
+		//RegisterHelper.registerItem(citrine_gem);
 		RegisterHelper.registerItem(coin);
 	}
 
 	public static void registerItemRenderer() {
 		RegisterHelper.registerItemRenderer(hearthstone);
-		RegisterHelper.registerItemRenderer(citrine_gem);
+		//RegisterHelper.registerItemRenderer(citrine_gem);
 		RegisterHelper.registerItemRenderer(coin);
 	}
 }

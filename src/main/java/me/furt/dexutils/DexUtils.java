@@ -11,6 +11,8 @@ import me.furt.dexutils.init.ModItems;
 import me.furt.dexutils.proxy.ClientProxy;
 import me.furt.dexutils.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.ClientCommandHandler;
@@ -52,8 +54,9 @@ public class DexUtils {
 	public void init(FMLInitializationEvent event) {
 		proxy.init(event);
 		proxy.registerRenderers();
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.citrine_block), "AAA", "AAA", "AAA", 'A', ModItems.citrine_gem);
-		GameRegistry.addRecipe(new ItemStack(ModItems.citrine_gem, 9), "A", 'A', ModBlocks.citrine_block);
+		GameRegistry.addRecipe(new ItemStack(ModItems.hearthstone), "CAC", "ABA", "CAC", 'A', Items.QUARTZ, 'B', Blocks.LAPIS_BLOCK, 'C', Blocks.STONE);
+		//GameRegistry.addRecipe(new ItemStack(ModBlocks.citrine_block), "AAA", "AAA", "AAA", 'A', ModItems.citrine_gem);
+		//GameRegistry.addRecipe(new ItemStack(ModItems.citrine_gem, 9), "A", 'A', ModBlocks.citrine_block);
 	}
 
 	@EventHandler
