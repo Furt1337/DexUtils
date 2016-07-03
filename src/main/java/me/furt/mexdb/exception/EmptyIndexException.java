@@ -1,4 +1,4 @@
-package com.xemsdoom.mexdb.exception;
+package me.furt.mexdb.exception;
  
 /**
  * Copyright (C) 2012-2013 Moser Luca <moser.luca@gmail.com> 

@@ -1,4 +1,4 @@
-package com.xemsdoom.mexdb.exception;
+package me.furt.mexdb.exception;
  
 /**
  * Copyright (C) 2012-2013 Moser Luca <moser.luca@gmail.com> 
@@ -20,16 +20,16 @@ package com.xemsdoom.mexdb.exception;
  */ 
  
 /**
- * Thrown when an empty list is passed as a method parameter. 
+ * Thrown when an invalid/nonexistent index is passed as a parameter. 
  */ 
-public class EmptyListException extends Exception { 
+public class NoSuchIndexException extends Exception { 
  
  private static final long serialVersionUID = 1L; 
  
  /**
-  * Thrown when an empty list is passed as a method parameter. 
+  * Thrown when an invalid/nonexistent index is passed as a parameter. 
   */ 
- public EmptyListException(String msg) { 
+ public NoSuchIndexException(String msg) { 
   super(msg); 
  } 
  

@@ -1,11 +1,10 @@
 package me.furt.dexutils.db;
 
-import com.xemsdoom.mexdb.MexDB;
-import com.xemsdoom.mexdb.exception.EmptyIndexException;
-import com.xemsdoom.mexdb.system.Entry;
-
 import me.furt.dexutils.DexUtils;
 import me.furt.dexutils.help.Location;
+import me.furt.mexdb.MexDB;
+import me.furt.mexdb.exception.EmptyIndexException;
+import me.furt.mexdb.system.Entry;
 import net.minecraft.entity.player.EntityPlayer;
 
 /**

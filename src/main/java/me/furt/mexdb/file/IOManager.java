@@ -1,4 +1,4 @@
-package com.xemsdoom.mexdb.file;
+package me.furt.mexdb.file;
  
 import java.io.BufferedReader; 
 import java.io.BufferedWriter; 

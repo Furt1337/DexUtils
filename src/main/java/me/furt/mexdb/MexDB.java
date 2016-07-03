@@ -1,4 +1,4 @@
-package com.xemsdoom.mexdb;
+package me.furt.mexdb;
  
 import java.util.ArrayList; 
 import java.util.LinkedHashMap; 
@@ -6,11 +6,14 @@ import java.util.LinkedList;
 import java.util.List; 
 import java.util.Set; 
  
-import com.xemsdoom.mexdb.exception.EmptyListException; 
-import com.xemsdoom.mexdb.exception.NoSuchIndexException; 
-import com.xemsdoom.mexdb.file.IOManager; 
-import com.xemsdoom.mexdb.system.DataManager; 
-import com.xemsdoom.mexdb.system.Entry; 
+
+
+
+import me.furt.mexdb.exception.EmptyListException;
+import me.furt.mexdb.exception.NoSuchIndexException;
+import me.furt.mexdb.file.IOManager;
+import me.furt.mexdb.system.DataManager;
+import me.furt.mexdb.system.Entry;
  
 /**
  * Copyright (C) 2012-2013 Moser Luca <moser.luca@gmail.com> 

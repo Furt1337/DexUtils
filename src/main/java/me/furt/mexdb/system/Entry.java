@@ -1,9 +1,10 @@
-package com.xemsdoom.mexdb.system;
+package me.furt.mexdb.system;
  
 import java.util.List; 
  
-import com.xemsdoom.mexdb.exception.EmptyIndexException; 
-import com.xemsdoom.mexdb.exception.EmptyListException; 
+
+import me.furt.mexdb.exception.EmptyIndexException;
+import me.furt.mexdb.exception.EmptyListException;
  
 /**
  * Copyright (C) 2012-2013 Moser Luca <moser.luca@gmail.com> 

@@ -2,14 +2,13 @@ package me.furt.dexutils;
 
 import java.io.File;
 
-import com.xemsdoom.mexdb.MexDB;
-import com.xemsdoom.mexdb.system.Entry;
-
 import me.furt.dexutils.commands.HomeCommand;
 import me.furt.dexutils.init.ModBlocks;
 import me.furt.dexutils.init.ModItems;
 import me.furt.dexutils.proxy.ClientProxy;
 import me.furt.dexutils.proxy.CommonProxy;
+import me.furt.mexdb.MexDB;
+import me.furt.mexdb.system.Entry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -17,7 +16,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.*;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
