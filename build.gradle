@@ -1,4 +1,3 @@
-
 buildscript {
     repositories {
         jcenter()
@@ -13,18 +12,24 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
+def ENV = System.getenv()
+
 ext.configFile = file "build.properties"
 
 configFile.withReader {
     def prop = new Properties()
     prop.load(it)
-    project.ext.config = new ConfigSlurper().parse prop
+    ext.config = new ConfigSlurper().parse prop
 }
 
-def ENV = System.getenv()
-version = "${config.minecraft_version}-${config.mod_version}." + (ENV.DRONE_BUILD_NUMBER ?: "homebaked")
+def build = config.buildNum as Integer
+
+if(ENV.DRONE_BUILD_NUMBER)
+build = ENV.DRONE_BUILD_NUMBER as Integer
+
+version = config.mod_version + "." + build
 group= "me.furt.dexutils"
-archivesBaseName = "dexutils"
+archivesBaseName = "DexUtils-" + config.minecraft_version
 libsDirName = "../output"
 distsDirName = "../output"
 sourceCompatibility = '1.8'
@@ -32,6 +37,7 @@ targetCompatibility = '1.8'
 
 minecraft {
     version = config.minecraft_version + "-" + config.forge_version
+	replace "@VERSION@", project.version
     mappings = "${config.mappings_version}"
     runDir = "run"
 }
