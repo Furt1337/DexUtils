@@ -31,7 +31,7 @@ import net.minecraftforge.fml.common.SidedProxy;
  */
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class DexUtils {
-	
+
 	public static MexDB homesDB;
 
 	@Instance(Reference.MODID)
@@ -43,7 +43,8 @@ public class DexUtils {
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent event) {
 		Config.preInit(event);
-		homesDB = new MexDB(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MODID, "homes");
+		homesDB = new MexDB(event.getModConfigurationDirectory()
+				.getAbsolutePath() + File.separator + Reference.MODID, "homes");
 		homesDB.autopush(true);
 		proxy.preinit(event);
 		ModItems.registerItems();
@@ -54,9 +55,13 @@ public class DexUtils {
 	public void init(FMLInitializationEvent event) {
 		proxy.init(event);
 		proxy.registerRenderers();
-		GameRegistry.addRecipe(new ItemStack(ModItems.hearthstone), "CAC", "ABA", "CAC", 'A', Items.QUARTZ, 'B', Blocks.LAPIS_BLOCK, 'C', Blocks.STONE);
-		//GameRegistry.addRecipe(new ItemStack(ModBlocks.citrine_block), "AAA", "AAA", "AAA", 'A', ModItems.citrine_gem);
-		//GameRegistry.addRecipe(new ItemStack(ModItems.citrine_gem, 9), "A", 'A', ModBlocks.citrine_block);
+		GameRegistry.addRecipe(new ItemStack(ModItems.hearthstone), "CAC",
+				"ABA", "CAC", 'A', Items.QUARTZ, 'B', Blocks.LAPIS_BLOCK, 'C',
+				Blocks.STONE);
+		// GameRegistry.addRecipe(new ItemStack(ModBlocks.citrine_block), "AAA",
+		// "AAA", "AAA", 'A', ModItems.citrine_gem);
+		// GameRegistry.addRecipe(new ItemStack(ModItems.citrine_gem, 9), "A",
+		// 'A', ModBlocks.citrine_block);
 	}
 
 	@EventHandler
@@ -68,10 +73,11 @@ public class DexUtils {
 	public void loadComplete(FMLLoadCompleteEvent event) {
 
 	}
-	
+
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
-		event.registerServerCommand(new HomeCommand("home", "'set <name>', 'del <name>'"));
+		event.registerServerCommand(new HomeCommand("home",
+				"'set <name>', 'del <name>'"));
 	}
 
 	public static CreativeTabs coreTab = new CreativeTabs(Reference.MODID) {

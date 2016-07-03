@@ -10,9 +10,13 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
+/**
+ * Created by Furt on 5/30/2016.
+ */
 public class BlockBase extends Block {
-	
-	public BlockBase(float hardness, float resistance, String harvestType, int harvestLevel, float lightLevel, Material material) {
+
+	public BlockBase(float hardness, float resistance, String harvestType,
+			int harvestLevel, float lightLevel, Material material) {
 		super(material);
 		this.setCreativeTab(DexUtils.coreTab);
 		this.setSoundType(SoundType.STONE);

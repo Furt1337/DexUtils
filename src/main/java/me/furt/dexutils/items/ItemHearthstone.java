@@ -16,6 +16,9 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
+/**
+ * Created by Furt on 5/30/2016.
+ */
 public class ItemHearthstone extends Item {
 	public ItemHearthstone() {
 		super();

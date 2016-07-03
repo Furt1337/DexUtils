@@ -24,27 +24,15 @@ public class Config {
 	static Configuration config;
 
 	public static void preInit(FMLPreInitializationEvent event) {
-		File configDir = new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MODID);
-		if(!configDir.exists())
+		File configDir = new File(event.getModConfigurationDirectory()
+				.getAbsolutePath() + File.separator + Reference.MODID);
+		if (!configDir.exists())
 			configDir.mkdirs();
-		File configFile = new File(configDir.getAbsoluteFile() + File.separator + Reference.MODID + ".cfg");
+		File configFile = new File(configDir.getAbsoluteFile() + File.separator
+				+ Reference.MODID + ".cfg");
 		config = new Configuration(configFile);
 		config.load();
-
-		double currentVersion = Reference.VERSION_DOUBLE;
-		Property propLastVersion = config
-				.get("general",
-						"LastVersion",
-						.01,
-						"The last version that was run in this instance. DO NOT CHANGE THIS, IT WILL BREAK THINGS.");
-		double lastVersion = propLastVersion.getDouble();
-
-		if (lastVersion < currentVersion) {
-			propLastVersion.set(currentVersion);
-			LogHelper.info("The Previous Version of "+ Reference.NAME +" was outdated!");
-
-			config.getCategory("general").remove("Show Update News");
-		}
+		// TODO add config here
 		config.save();
 
 	}

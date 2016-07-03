@@ -20,12 +20,13 @@ public class CommonProxy {
 
 	public void preinit(FMLPreInitializationEvent event) {
 		// Items
-		
+
 	}
 
 	public void init(FMLInitializationEvent event) {
 		// Recipes
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.citrine_block), "AAA", "AAA", "AAA", 'A', ModItems.citrine_gem);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.citrine_block), "AAA",
+				"AAA", "AAA", 'A', ModItems.citrine_gem);
 	}
 
 	public void postinit(FMLPostInitializationEvent event) {

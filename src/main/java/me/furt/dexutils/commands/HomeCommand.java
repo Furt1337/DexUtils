@@ -10,6 +10,9 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 
+/**
+ * Created by Furt on 6/23/2016.
+ */
 public class HomeCommand extends ModCommand {
 
 	public HomeCommand(String commandName, String usage) {
