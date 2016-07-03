@@ -5,17 +5,22 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+/**
+ * Created by Furt on 6/5/2016.
+ */
 public class RegisterHelper {
 
 	public static void registerBlock(Block block) {
-		GameRegistry.registerBlock(block,
-				block.getUnlocalizedName().substring(5));
+		GameRegistry.register(block, new ResourceLocation(Reference.MODID,
+				block.getUnlocalizedName().substring(5)));
 	}
 
 	public static void registerItem(Item item) {
-		GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
+		GameRegistry.register(item, new ResourceLocation(Reference.MODID, item
+				.getUnlocalizedName().substring(5)));
 	}
 
 	public static void registerItemRenderer(Item item) {
