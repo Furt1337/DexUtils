@@ -14,17 +14,23 @@ public class ModItems {
 			.setUnlocalizedName("hearthstone");
 	public static Item citrine_gem = new ItemCitrineGem()
 			.setUnlocalizedName("citrine_gem");
-	public static Item coin = new ItemCoin().setUnlocalizedName("coin");
+	public static Item coinGold = new ItemCoin().setUnlocalizedName("coin_gold");
+	public static Item coinSilver = new ItemCoin().setUnlocalizedName("coin_silver");
+	public static Item coinCopper = new ItemCoin().setUnlocalizedName("coin_copper");
 
 	public static void registerItems() {
 		RegisterHelper.registerItem(hearthstone);
 		// RegisterHelper.registerItem(citrine_gem);
-		RegisterHelper.registerItem(coin);
+		RegisterHelper.registerItem(coinGold);
+		RegisterHelper.registerItem(coinSilver);
+		RegisterHelper.registerItem(coinCopper);
 	}
 
 	public static void registerItemRenderer() {
 		RegisterHelper.registerItemRenderer(hearthstone);
 		// RegisterHelper.registerItemRenderer(citrine_gem);
-		RegisterHelper.registerItemRenderer(coin);
+		RegisterHelper.registerItemRenderer(coinGold);
+		RegisterHelper.registerItemRenderer(coinSilver);
+		RegisterHelper.registerItemRenderer(coinCopper);
 	}
 }
