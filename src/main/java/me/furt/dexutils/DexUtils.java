@@ -32,7 +32,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class DexUtils {
 
-	public static MexDB homesDB;
+	public static MexDB waypointDB;
 
 	@Instance(Reference.MODID)
 	public static DexUtils instance;
@@ -43,9 +43,9 @@ public class DexUtils {
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent event) {
 		Config.preInit(event);
-		homesDB = new MexDB(event.getModConfigurationDirectory()
+		waypointDB = new MexDB(event.getModConfigurationDirectory()
 				.getAbsolutePath() + File.separator + Reference.MODID, "homes");
-		homesDB.autopush(true);
+		waypointDB.autopush(true);
 		proxy.preinit(event);
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
@@ -76,8 +76,12 @@ public class DexUtils {
 
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
+		event.registerServerCommand(new HomeCommand("dex",
+				"'setspawn', "));
 		event.registerServerCommand(new HomeCommand("home",
 				"'set <name>', 'del <name>'"));
+		event.registerServerCommand(new HomeCommand("spawn",
+				"<world>"));
 	}
 
 	public static CreativeTabs coreTab = new CreativeTabs(Reference.MODID) {

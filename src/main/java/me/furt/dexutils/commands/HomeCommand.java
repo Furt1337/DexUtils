@@ -1,6 +1,6 @@
 package me.furt.dexutils.commands;
 
-import me.furt.dexutils.db.Home;
+import me.furt.dexutils.db.Waypoint;
 import me.furt.dexutils.help.Location;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -29,42 +29,42 @@ public class HomeCommand extends ModCommand {
 							TextFormatting.GOLD + "List not implemented."));
 					return;
 				} else {
-					Home h = new Home((EntityPlayer) sender, args[0]);
-					Location l = h.getHome();
+					Waypoint w = new Waypoint((EntityPlayer) sender, args[0]);
+					Location l = w.getWaypoint();
 					if (l != null) {
 						((EntityPlayer) sender).setPositionAndUpdate(l.getX(),
 								l.getY(), l.getZ());
 						sender.addChatMessage(new TextComponentString(
 								TextFormatting.GOLD + "Teleported to "
-										+ h.homeName + " location."));
-						h.destroy();
+										+ w.waypointName + " location."));
+						w.destroy();
 						return;
 					} else {
 						sender.addChatMessage(new TextComponentString(
-								TextFormatting.GOLD + h.homeName
+								TextFormatting.GOLD + w.waypointName
 										+ " not found."));
-						h.destroy();
+						w.destroy();
 					}
 					return;
 				}
 			}
 			if (args.length == 2) {
 				if (args[0].equalsIgnoreCase("set")) {
-					Home h = new Home((EntityPlayer) sender, args[1]);
-					if (h.setHome()) {
+					Waypoint w = new Waypoint((EntityPlayer) sender, args[1]);
+					if (w.setWaypoint()) {
 						sender.addChatMessage(new TextComponentString(
 								TextFormatting.GOLD + "New location set for "
-										+ h.getHomeName() + "."));
-						h.destroy();
+										+ w.getWaypointName() + "."));
+						w.destroy();
 						return;
 					}
 				} else if (args[0].equalsIgnoreCase("del")) {
-					Home h = new Home((EntityPlayer) sender, args[1]);
-					if (h.deleteHome()) {
+					Waypoint w = new Waypoint((EntityPlayer) sender, args[1]);
+					if (w.deleteWaypoint()) {
 						sender.addChatMessage(new TextComponentString(
-								TextFormatting.GOLD + "Deleted " + h.homeName
+								TextFormatting.GOLD + "Deleted " + w.waypointName
 										+ " location."));
-						h.destroy();
+						w.destroy();
 						return;
 					}
 				}

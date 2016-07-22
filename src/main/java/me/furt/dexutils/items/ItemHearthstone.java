@@ -3,7 +3,7 @@ package me.furt.dexutils.items;
 import java.util.List;
 
 import me.furt.dexutils.DexUtils;
-import me.furt.dexutils.db.Home;
+import me.furt.dexutils.db.Waypoint;
 import me.furt.dexutils.help.Location;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,13 +31,13 @@ public class ItemHearthstone extends Item {
 			World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		if (!worldIn.isRemote) {
 			if (hand.equals(EnumHand.MAIN_HAND)) {
-				Home h = new Home(playerIn, "home");
+				Waypoint h = new Waypoint(playerIn, "home");
 				if (playerIn.isSneaking()) {
-					h.setHome();
+					h.setWaypoint();
 					playerIn.addChatMessage(new TextComponentString(
 							TextFormatting.GOLD + "Home location is set."));
 				} else {
-					Location l = h.getHome();
+					Location l = h.getWaypoint();
 					if (l != null) {
 						playerIn.setPositionAndUpdate(l.getX(), l.getY(),
 								l.getZ());
