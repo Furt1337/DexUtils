@@ -1,6 +1,6 @@
 {
 	"parent":"dexutils:item/itembase",
 	"textures": {
-		"layer0":"dexutils:items/coin"
+		"layer0":"dexutils:items/coin_gold"
 	}
 }
