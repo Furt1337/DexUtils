@@ -15,6 +15,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.ClientCommandHandler;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -43,9 +44,8 @@ public class DexUtils {
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent event) {
 		Config.preInit(event);
-		waypointDB = new MexDB(event.getModConfigurationDirectory()
-				.getAbsolutePath() + File.separator + Reference.MODID, "homes");
-		waypointDB.autopush(true);
+		//waypointDB = new MexDB(DimensionManager.getCurrentSaveRootDirectory() + File.separator + Reference.MODID, "waypoint");
+		//waypointDB.autopush(true);
 		proxy.preinit(event);
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
@@ -76,6 +76,8 @@ public class DexUtils {
 
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
+		waypointDB = new MexDB(DimensionManager.getCurrentSaveRootDirectory().getPath() + File.separator + Reference.MODID, "waypoint");
+		waypointDB.autopush(true);
 		event.registerServerCommand(new HomeCommand("dex",
 				"'setspawn', "));
 		event.registerServerCommand(new HomeCommand("home",

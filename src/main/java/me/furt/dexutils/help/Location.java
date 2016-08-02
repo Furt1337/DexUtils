@@ -1,6 +1,7 @@
 package me.furt.dexutils.help;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.World;
 
 /**
@@ -15,6 +16,7 @@ public class Location {
 	}
 
 	public Location(EntityPlayer player) {
+		EntityPlayerMP p = (EntityPlayerMP) player;
 		this.x = player.posX;
 		this.y = player.posY;
 		this.z = player.posZ;
@@ -22,12 +24,16 @@ public class Location {
 		this.yaw = player.cameraYaw;
 	}
 
-	public Location(Double x, Double y, Double z, Float pitch, Float yaw) {
+	public Location(String world, Double x, Double y, Double z, Float pitch, Float yaw) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
 		this.pitch = pitch;
 		this.yaw = yaw;
+	}
+
+	}
+
 	}
 
 	public Double getX() {
