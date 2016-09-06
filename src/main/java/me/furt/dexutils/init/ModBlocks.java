@@ -1,28 +1,50 @@
 package me.furt.dexutils.init;
 
-import me.furt.dexutils.blocks.BaseDrop;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.function.Function;
+
+import javax.annotation.Nullable;
+
 import me.furt.dexutils.blocks.BlockBase;
+import me.furt.dexutils.blocks.BlockCitrineOre;
+import me.furt.dexutils.blocks.BlockCitrineBlock;
 import me.furt.dexutils.help.RegisterHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemBlock;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Created by Furt on 6/5/2016.
  */
 public class ModBlocks {
-	public static Block citrine_ore = new BaseDrop(1.0F, 3.0F, "pickaxe", 1,
-			0F, Material.ROCK, ModItems.CITRINE_GEM)
-			.setUnlocalizedName("citrine_ore");
-	public static Block citrine_block = new BlockBase(1.0F, 3.0F, "pickaxe", 1,
-			0F, Material.ROCK).setUnlocalizedName("citrine_block");
+	public static final Set<Block> BLOCKS = new HashSet<>();
+	
+	public static Block CITRINE_ORE;
+	public static Block CITRINE_BLOCK;
 
-	public static void registerBlocks() {
-		// RegisterHelper.registerBlock(citrine_ore);
-		// RegisterHelper.registerBlock(citrine_block);
+	static {
+		CITRINE_ORE = registerBlock(new BlockCitrineOre());
+		CITRINE_BLOCK = registerBlock(new BlockCitrineBlock());
 	}
+	
+	public static void registerBlocks() {}
+	
+	protected static <BLOCK extends Block> BLOCK registerBlock(BLOCK block) {
+		return registerBlock(block, ItemBlock::new);
+	}
+	
+	protected static <BLOCK extends Block> BLOCK registerBlock(BLOCK block, @Nullable Function<BLOCK, ItemBlock> itemFactory) {
+		GameRegistry.register(block);
 
-	public static void registerBlockRenderer() {
-		// RegisterHelper.registerBlockRenderer(citrine_ore);
-		// RegisterHelper.registerBlockRenderer(citrine_block);
+		if (itemFactory != null) {
+			final ItemBlock itemBlock = itemFactory.apply(block);
+
+			GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
+		}
+
+		BLOCKS.add(block);
+		return block;
 	}
 }

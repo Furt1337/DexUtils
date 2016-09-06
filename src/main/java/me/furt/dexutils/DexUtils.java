@@ -55,6 +55,7 @@ public class DexUtils {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		ModItems.registerItems();
+		ModBlocks.registerBlocks();
 		
 		proxy.init();
 	}

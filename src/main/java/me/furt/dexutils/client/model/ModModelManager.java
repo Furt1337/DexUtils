@@ -3,6 +3,7 @@ package me.furt.dexutils.client.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import me.furt.dexutils.init.ModBlocks;
 import me.furt.dexutils.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.ItemMeshDefinition;
@@ -26,7 +27,7 @@ public class ModModelManager {
 	}
 
 	private void registerBlockModels() {
-
+		ModBlocks.BLOCKS.stream().filter(block -> !itemsRegistered.contains(Item.getItemFromBlock(block))).forEach(this::registerBlockItemModel);
 	}
 
 	private void registerBlockItemModel(Block block) {
@@ -60,14 +61,7 @@ public class ModModelManager {
 	private final Set<Item> itemsRegistered = new HashSet<>();
 
 	private void registerItemModels() {
-		// Register items with custom model names first
-		//registerItemModel(ModItems, "dexutils:");
-		registerItemModel(ModItems.CITRINE_GEM, "dexutils:citrine_gem");
-		registerItemModel(ModItems.COIN_COPPER, "dexutils:coin_copper");
-		registerItemModel(ModItems.COIN_SILVER, "dexutils:coin_silver");
-		registerItemModel(ModItems.COIN_GOLD, "dexutils:coin_gold");
-		registerItemModel(ModItems.HEARTHSTONE, "dexutils:hearthstone");
-		registerItemModel(ModItems.WORLDSTONE, "dexutils:worldstone");
+		ModItems.ITEMS.stream().filter(item -> !itemsRegistered.contains(item)).forEach(this::registerItemModel);
 	}
 
 	private void registerItemModel(Item item) {
