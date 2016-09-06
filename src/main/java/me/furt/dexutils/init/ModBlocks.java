@@ -11,7 +11,7 @@ import net.minecraft.block.material.Material;
  */
 public class ModBlocks {
 	public static Block citrine_ore = new BaseDrop(1.0F, 3.0F, "pickaxe", 1,
-			0F, Material.ROCK, ModItems.citrine_gem)
+			0F, Material.ROCK, ModItems.CITRINE_GEM)
 			.setUnlocalizedName("citrine_ore");
 	public static Block citrine_block = new BlockBase(1.0F, 3.0F, "pickaxe", 1,
 			0F, Material.ROCK).setUnlocalizedName("citrine_block");
