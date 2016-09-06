@@ -14,7 +14,10 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import me.furt.dexutils.DexUtils;
 import me.furt.dexutils.Reference;
+import me.furt.dexutils.gui.handler.GuiHandler;
 import me.furt.dexutils.init.ModBlocks;
 import me.furt.dexutils.init.ModItems;
 import me.furt.dexutils.items.ItemBase;
@@ -25,24 +28,19 @@ import me.furt.dexutils.items.ItemBase;
 public class ClientProxy extends CommonProxy {
 
 	@Override
-	public void preinit(FMLPreInitializationEvent event) {
+	public void preInit() {
 
 	}
 
 	@Override
-	public void init(FMLInitializationEvent event) {
-
+	public void init() {
+		// TODO move this
+		NetworkRegistry.INSTANCE.registerGuiHandler(DexUtils.instance, new GuiHandler());
 	}
 
 	@Override
-	public void postinit(FMLPostInitializationEvent event) {
+	public void postInit() {
 
-	}
-
-	@Override
-	public void registerRenderers() {
-		ModItems.registerItemRenderer();
-		ModBlocks.registerBlockRenderer();
 	}
 
 }

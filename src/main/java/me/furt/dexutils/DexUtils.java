@@ -42,31 +42,25 @@ public class DexUtils {
 	public static CommonProxy proxy;
 
 	@EventHandler
-	public void preinit(FMLPreInitializationEvent event) {
+	public void preInit(FMLPreInitializationEvent event) {
 		Config.preInit(event);
-		//waypointDB = new MexDB(DimensionManager.getCurrentSaveRootDirectory() + File.separator + Reference.MODID, "waypoint");
-		//waypointDB.autopush(true);
-		proxy.preinit(event);
-		ModItems.registerItems();
-		ModBlocks.registerBlocks();
+		// waypointDB = new MexDB(DimensionManager.getCurrentSaveRootDirectory()
+		// + File.separator + Reference.MODID, "waypoint");
+		// waypointDB.autopush(true);
+		proxy.preInit();
+		
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		proxy.init(event);
-		proxy.registerRenderers();
-		GameRegistry.addRecipe(new ItemStack(ModItems.hearthstone), "CAC",
-				"ABA", "CAC", 'A', Items.QUARTZ, 'B', Blocks.LAPIS_BLOCK, 'C',
-				Blocks.STONE);
-		// GameRegistry.addRecipe(new ItemStack(ModBlocks.citrine_block), "AAA",
-		// "AAA", "AAA", 'A', ModItems.citrine_gem);
-		// GameRegistry.addRecipe(new ItemStack(ModItems.citrine_gem, 9), "A",
-		// 'A', ModBlocks.citrine_block);
+		
+		
+		proxy.init();
 	}
 
 	@EventHandler
-	public void postinit(FMLPostInitializationEvent event) {
-		proxy.postinit(event);
+	public void postInit(FMLPostInitializationEvent event) {
+		proxy.postInit();
 	}
 
 	@EventHandler
@@ -76,14 +70,13 @@ public class DexUtils {
 
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
-		waypointDB = new MexDB(DimensionManager.getCurrentSaveRootDirectory().getPath() + File.separator + Reference.MODID, "waypoint");
+		waypointDB = new MexDB(DimensionManager.getCurrentSaveRootDirectory()
+				.getPath() + File.separator + Reference.MODID, "waypoint");
 		waypointDB.autopush(true);
-		event.registerServerCommand(new HomeCommand("dex",
-				"'setspawn', "));
+		event.registerServerCommand(new HomeCommand("dex", "'setspawn', "));
 		event.registerServerCommand(new HomeCommand("home",
 				"'set <name>', 'del <name>'"));
-		event.registerServerCommand(new HomeCommand("spawn",
-				"<world>"));
+		event.registerServerCommand(new HomeCommand("spawn", "<world>"));
 	}
 
 	public static CreativeTabs coreTab = new CreativeTabs(Reference.MODID) {
@@ -94,7 +87,7 @@ public class DexUtils {
 
 		@Override
 		public ItemStack getIconItemStack() {
-			return new ItemStack(ModItems.hearthstone, 1);
+			return new ItemStack(ModItems.HEARTHSTONE, 1);
 		}
 	};
 
