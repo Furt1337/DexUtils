@@ -10,7 +10,6 @@ public class ItemCoin extends Item {
 
 	public ItemCoin() {
 		super();
-		this.setCreativeTab(DexUtils.coreTab);
 		this.setMaxStackSize(64);
 	}
 

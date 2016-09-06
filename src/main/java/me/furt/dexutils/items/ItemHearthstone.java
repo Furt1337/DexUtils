@@ -3,7 +3,8 @@ package me.furt.dexutils.items;
 import java.util.List;
 
 import me.furt.dexutils.DexUtils;
-import me.furt.dexutils.db.Home;
+import me.furt.dexutils.db.Waypoint;
+import me.furt.dexutils.db.Waypoint.Waypoints;
 import me.furt.dexutils.help.Location;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,10 +20,9 @@ import net.minecraft.world.World;
 /**
  * Created by Furt on 5/30/2016.
  */
-public class ItemHearthstone extends Item {
+public class ItemHearthstone extends ItemBase {
 	public ItemHearthstone() {
-		super();
-		this.setCreativeTab(DexUtils.coreTab);
+		super("hearthstone");
 		this.setMaxStackSize(1);
 	}
 
@@ -31,13 +31,13 @@ public class ItemHearthstone extends Item {
 			World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		if (!worldIn.isRemote) {
 			if (hand.equals(EnumHand.MAIN_HAND)) {
-				Home h = new Home(playerIn, "home");
+				Waypoint h = new Waypoint(playerIn, "home", Waypoints.HOME);
 				if (playerIn.isSneaking()) {
-					h.setHome();
+					h.setWaypoint();
 					playerIn.addChatMessage(new TextComponentString(
 							TextFormatting.GOLD + "Home location is set."));
 				} else {
-					Location l = h.getHome();
+					Location l = h.getWaypoint();
 					if (l != null) {
 						playerIn.setPositionAndUpdate(l.getX(), l.getY(),
 								l.getZ());

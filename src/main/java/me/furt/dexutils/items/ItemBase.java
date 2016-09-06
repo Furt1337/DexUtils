@@ -20,18 +20,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ItemBase extends Item {
 	public String itemName;
 
-	public ItemBase(String name, int stackSize) {
-		this.setUnlocalizedName(Reference.MODID + "." + name);
-		this.setCreativeTab(DexUtils.coreTab);
-		this.setMaxStackSize(stackSize);
-		this.itemName = name;
-		GameRegistry.register(this, new ResourceLocation(Reference.MODID + ":"
-				+ getUnlocalizedName()));
+	public ItemBase(String itemName) {
+		setItemName(this, itemName);
+		setCreativeTab(DexUtils.coreTab);
 	}
-
-	@Override
-	public String getUnlocalizedName(ItemStack stack) {
-
-		return this.getUnlocalizedName();
+	
+	public static void setItemName(Item item, String itemName) {
+		item.setRegistryName(itemName);
+		item.setUnlocalizedName(item.getRegistryName().toString());
 	}
 }

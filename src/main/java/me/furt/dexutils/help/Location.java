@@ -1,6 +1,7 @@
 package me.furt.dexutils.help;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.World;
 
 /**
@@ -8,6 +9,7 @@ import net.minecraft.world.World;
  */
 public class Location {
 
+	private String dim;
 	private Double x, y, z;
 	private Float pitch, yaw;
 
@@ -15,6 +17,8 @@ public class Location {
 	}
 
 	public Location(EntityPlayer player) {
+		this.dim = player.worldObj.getWorldInfo().getWorldName();
+		EntityPlayerMP p = (EntityPlayerMP) player;
 		this.x = player.posX;
 		this.y = player.posY;
 		this.z = player.posZ;
@@ -22,12 +26,21 @@ public class Location {
 		this.yaw = player.cameraYaw;
 	}
 
-	public Location(Double x, Double y, Double z, Float pitch, Float yaw) {
+	public Location(String dim, Double x, Double y, Double z, Float pitch, Float yaw) {
+		this.dim = dim;
 		this.x = x;
 		this.y = y;
 		this.z = z;
 		this.pitch = pitch;
 		this.yaw = yaw;
+	}
+
+	public String getDim() {
+		return dim;
+	}
+
+	public void setDim(String dim) {
+		this.dim = dim;
 	}
 
 	public Double getX() {

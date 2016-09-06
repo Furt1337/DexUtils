@@ -1,6 +1,9 @@
-item.hearthstone.name=Hearthstone
-item.coin.name=Gold Coin
-item.citrine_gem.name=Citrine
-tile.citrine_ore.name=Citrine Ore
-tile.citrine_block.name=Citrine Block
+item.dexutils:hearthstone.name=Hearthstone
+item.dexutils:worldstone.name=Worldstone
+item.dexutils:coin_gold.name=Gold Coin
+item.dexutils:coin_silver.name=Silver Coin
+item.dexutils:coin_copper.name=Copper Coin
+item.dexutils:citrine_gem.name=Citrine
+tile.dexutils:citrine_ore.name=Citrine Ore
+tile.dexutils:citrine_block.name=Citrine Block
 itemGroup.dexutils=DexUtilities
