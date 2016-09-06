@@ -1,6 +1,6 @@
 {
 	"parent":"dexutils:item/itembase",
 	"textures": {
-		"layer0":"dexutils:items/world_stone"
+		"layer0":"dexutils:items/worldstone"
 	}
 }

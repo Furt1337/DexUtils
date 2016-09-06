@@ -20,10 +20,9 @@ import net.minecraft.world.World;
 /**
  * Created by Furt on 5/30/2016.
  */
-public class ItemHearthstone extends Item {
+public class ItemHearthstone extends ItemBase {
 	public ItemHearthstone() {
-		super();
-		this.setCreativeTab(DexUtils.coreTab);
+		super("hearthstone");
 		this.setMaxStackSize(1);
 	}
 

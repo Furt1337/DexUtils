@@ -1,44 +1,47 @@
 package me.furt.dexutils.init;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import me.furt.dexutils.help.RegisterHelper;
 import me.furt.dexutils.items.ItemCitrineGem;
 import me.furt.dexutils.items.ItemCoin;
+import me.furt.dexutils.items.ItemCoinCopper;
+import me.furt.dexutils.items.ItemCoinGold;
+import me.furt.dexutils.items.ItemCoinSilver;
 import me.furt.dexutils.items.ItemHearthstone;
 import me.furt.dexutils.items.ItemWorldstone;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Created by Furt on 6/5/2016.
  */
 public class ModItems {
-	public static Item hearthstone = new ItemHearthstone()
-			.setUnlocalizedName("hearthstone");
-	public static Item worldstone = new ItemWorldstone()
-			.setUnlocalizedName("worldstone");
-	public static Item citrine_gem = new ItemCitrineGem()
-			.setUnlocalizedName("citrine_gem");
-	public static Item coinGold = new ItemCoin()
-			.setUnlocalizedName("coin_gold");
-	public static Item coinSilver = new ItemCoin()
-			.setUnlocalizedName("coin_silver");
-	public static Item coinCopper = new ItemCoin()
-			.setUnlocalizedName("coin_copper");
-
-	public static void registerItems() {
-		RegisterHelper.registerItem(hearthstone);
-		RegisterHelper.registerItem(worldstone);
-		// RegisterHelper.registerItem(citrine_gem);
-		RegisterHelper.registerItem(coinGold);
-		RegisterHelper.registerItem(coinSilver);
-		RegisterHelper.registerItem(coinCopper);
+	public static final Set<Item> ITEMS = new HashSet<>();
+	
+	public static Item HEARTHSTONE;
+	public static Item WORLDSTONE;
+	public static Item CITRINE_GEM;
+	public static Item COIN_GOLD;
+	public static Item COIN_SILVER;
+	public static Item COIN_COPPER;
+	
+	static {
+		HEARTHSTONE = registerItem(new ItemHearthstone());
+		WORLDSTONE = registerItem(new ItemWorldstone());
+		CITRINE_GEM = registerItem(new ItemCitrineGem());
+		COIN_GOLD = registerItem(new ItemCoinGold());
+		COIN_SILVER = registerItem(new ItemCoinSilver());
+		COIN_COPPER = registerItem(new ItemCoinCopper());
 	}
+	
+	public static void registerItems() {}
+	
+	private static <T extends Item> T registerItem(T item) {
+		GameRegistry.register(item);
+		ITEMS.add(item);
 
-	public static void registerItemRenderer() {
-		RegisterHelper.registerItemRenderer(hearthstone);
-		RegisterHelper.registerItemRenderer(worldstone);
-		// RegisterHelper.registerItemRenderer(citrine_gem);
-		RegisterHelper.registerItemRenderer(coinGold);
-		RegisterHelper.registerItemRenderer(coinSilver);
-		RegisterHelper.registerItemRenderer(coinCopper);
+		return item;
 	}
 }

@@ -6,9 +6,11 @@ import net.minecraft.item.Item;
 /**
  * Created by Furt on 5/30/2016.
  */
-public class ItemCitrineGem extends ItemBase {
-	public ItemCitrineGem() {
-		super("citrine_gem");
+public class ItemCoinGold extends ItemBase {
+
+	public ItemCoinGold() {
+		super("coin_gold");
 		this.setMaxStackSize(64);
 	}
+
 }
