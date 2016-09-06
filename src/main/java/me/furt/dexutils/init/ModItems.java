@@ -3,7 +3,6 @@ package me.furt.dexutils.init;
 import java.util.HashSet;
 import java.util.Set;
 
-import me.furt.dexutils.help.RegisterHelper;
 import me.furt.dexutils.items.ItemCitrineGem;
 import me.furt.dexutils.items.ItemCoin;
 import me.furt.dexutils.items.ItemCoinCopper;

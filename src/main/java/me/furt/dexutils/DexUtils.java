@@ -5,6 +5,7 @@ import java.io.File;
 import me.furt.dexutils.commands.HomeCommand;
 import me.furt.dexutils.init.ModBlocks;
 import me.furt.dexutils.init.ModItems;
+import me.furt.dexutils.init.ModRecipes;
 import me.furt.dexutils.proxy.ClientProxy;
 import me.furt.dexutils.proxy.CommonProxy;
 import me.furt.dexutils.proxy.IProxy;
@@ -45,17 +46,21 @@ public class DexUtils {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.preInit(event);
+		
 		// waypointDB = new MexDB(DimensionManager.getCurrentSaveRootDirectory()
 		// + File.separator + Reference.MODID, "waypoint");
 		// waypointDB.autopush(true);
+		
+		ModItems.registerItems();
+		ModBlocks.registerBlocks();
+		
 		proxy.preInit();
 		
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		ModItems.registerItems();
-		ModBlocks.registerBlocks();
+		ModRecipes.registerRecipes();
 		
 		proxy.init();
 	}

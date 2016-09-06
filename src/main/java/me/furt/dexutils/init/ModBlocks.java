@@ -9,7 +9,6 @@ import javax.annotation.Nullable;
 import me.furt.dexutils.blocks.BlockBase;
 import me.furt.dexutils.blocks.BlockCitrineOre;
 import me.furt.dexutils.blocks.BlockCitrineBlock;
-import me.furt.dexutils.help.RegisterHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;

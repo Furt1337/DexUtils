@@ -25,25 +25,9 @@ import net.minecraftforge.oredict.OreDictionary;
  */
 public class CommonProxy implements IProxy {
 
-	public void preInit() {
-		// Items
-		ModItems.registerItems();
-		ModBlocks.registerBlocks();
-	}
+	public void preInit() {}
 
-	public void init() {
-		// Recipes
-		/*
-		GameRegistry.addRecipe(new ItemStack(ModItems.HEARTHSTONE), "CAC",
-				"ABA", "CAC", 'A', Items.QUARTZ, 'B', Blocks.LAPIS_BLOCK, 'C',
-				Blocks.STONE);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.citrine_block), "AAA",
-				"AAA", "AAA", 'A', ModItems.citrine_gem);
-		GameRegistry.addRecipe(new ItemStack(ModItems.citrine_gem, 9), "A",
-				'A', ModBlocks.citrine_block);
-				*/
-	}
+	public void init() {}
 
-	public void postInit() {
-	}
+	public void postInit() {}
 }

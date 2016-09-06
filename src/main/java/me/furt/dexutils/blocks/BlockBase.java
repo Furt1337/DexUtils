@@ -5,6 +5,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 
+/**
+ * Created by Furt on 09/06/2016.
+ */
 public class BlockBase extends Block {
 
 	public BlockBase(Material materialIn, MapColor mapColor, String blockName) {
