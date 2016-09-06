@@ -7,6 +7,7 @@ import me.furt.dexutils.init.ModBlocks;
 import me.furt.dexutils.init.ModItems;
 import me.furt.dexutils.proxy.ClientProxy;
 import me.furt.dexutils.proxy.CommonProxy;
+import me.furt.dexutils.proxy.IProxy;
 import me.furt.mexdb.MexDB;
 import me.furt.mexdb.system.Entry;
 import net.minecraft.creativetab.CreativeTabs;
@@ -39,7 +40,7 @@ public class DexUtils {
 	public static DexUtils instance;
 
 	@SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.COMMON)
-	public static CommonProxy proxy;
+	public static IProxy proxy;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
