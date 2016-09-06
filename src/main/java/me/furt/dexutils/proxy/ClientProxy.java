@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import me.furt.dexutils.DexUtils;
 import me.furt.dexutils.Reference;
+import me.furt.dexutils.client.model.ModModelManager;
 import me.furt.dexutils.gui.handler.GuiHandler;
 import me.furt.dexutils.init.ModBlocks;
 import me.furt.dexutils.init.ModItems;
@@ -29,7 +30,7 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void preInit() {
-
+		ModModelManager.INSTANCE.registerAllModels();
 	}
 
 	@Override
