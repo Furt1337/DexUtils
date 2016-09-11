@@ -1,4 +1,4 @@
-package me.furt.dexutils.help;
+package me.furt.dexutils.util;
 
 import org.apache.logging.log4j.Level;
 

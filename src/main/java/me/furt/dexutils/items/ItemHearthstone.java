@@ -5,7 +5,7 @@ import java.util.List;
 import me.furt.dexutils.DexUtils;
 import me.furt.dexutils.db.Waypoint;
 import me.furt.dexutils.db.Waypoint.Waypoints;
-import me.furt.dexutils.help.Location;
+import me.furt.dexutils.util.Location;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;

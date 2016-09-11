@@ -7,7 +7,7 @@ import me.furt.dexutils.init.ModBlocks;
 import me.furt.dexutils.init.ModItems;
 import me.furt.dexutils.init.ModRecipes;
 import me.furt.dexutils.proxy.ClientProxy;
-import me.furt.dexutils.proxy.CommonProxy;
+import me.furt.dexutils.proxy.ServerProxy;
 import me.furt.dexutils.proxy.IProxy;
 import me.furt.mexdb.MexDB;
 import me.furt.mexdb.system.Entry;
@@ -47,10 +47,6 @@ public class DexUtils {
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.preInit(event);
 		
-		// waypointDB = new MexDB(DimensionManager.getCurrentSaveRootDirectory()
-		// + File.separator + Reference.MODID, "waypoint");
-		// waypointDB.autopush(true);
-		
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
 		
@@ -80,9 +76,9 @@ public class DexUtils {
 		waypointDB = new MexDB(DimensionManager.getCurrentSaveRootDirectory()
 				.getPath() + File.separator + Reference.MODID, "waypoint");
 		waypointDB.autopush(true);
-		event.registerServerCommand(new HomeCommand("dex", "'setspawn', "));
-		event.registerServerCommand(new HomeCommand("home",
-				"'set <name>', 'del <name>'"));
+		
+		//event.registerServerCommand(new HomeCommand("dex", "'setspawn', "));
+		event.registerServerCommand(new HomeCommand("home",	"'set <name>', 'del <name>'"));
 		event.registerServerCommand(new HomeCommand("spawn", "<world>"));
 	}
 

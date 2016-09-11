@@ -1,4 +1,4 @@
-package me.furt.dexutils.help;
+package me.furt.dexutils.util;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;

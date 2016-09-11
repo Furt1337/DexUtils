@@ -1,6 +1,6 @@
 package me.furt.dexutils.db;
 
-import me.furt.dexutils.help.Location;
+import me.furt.dexutils.util.Location;
 import net.minecraft.entity.player.EntityPlayer;
 
 /**

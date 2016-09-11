@@ -15,6 +15,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
 import me.furt.dexutils.DexUtils;
 import me.furt.dexutils.Reference;
 import me.furt.dexutils.client.model.ModModelManager;
@@ -26,7 +28,8 @@ import me.furt.dexutils.items.ItemBase;
 /**
  * Created by Furt on 5/30/2016.
  */
-public class ClientProxy extends CommonProxy {
+@SideOnly(Side.CLIENT)
+public class ClientProxy implements IProxy {
 
 	@Override
 	public void preInit() {

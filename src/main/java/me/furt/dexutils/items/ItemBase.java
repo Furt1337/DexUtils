@@ -4,7 +4,7 @@ import java.util.List;
 
 import me.furt.dexutils.DexUtils;
 import me.furt.dexutils.Reference;
-import me.furt.dexutils.proxy.CommonProxy;
+import me.furt.dexutils.proxy.ServerProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

@@ -23,7 +23,7 @@ import net.minecraftforge.oredict.OreDictionary;
 /**
  * Created by Furt on 5/30/2016.
  */
-public class CommonProxy implements IProxy {
+public class ServerProxy implements IProxy {
 
 	public void preInit() {}
 

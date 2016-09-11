@@ -3,7 +3,7 @@ package me.furt.dexutils;
 import java.io.File;
 import java.util.HashMap;
 
-import me.furt.dexutils.help.LogHelper;
+import me.furt.dexutils.util.LogHelper;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

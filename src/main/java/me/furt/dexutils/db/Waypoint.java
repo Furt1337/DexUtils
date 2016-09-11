@@ -1,7 +1,7 @@
 package me.furt.dexutils.db;
 
 import me.furt.dexutils.DexUtils;
-import me.furt.dexutils.help.Location;
+import me.furt.dexutils.util.Location;
 import me.furt.mexdb.MexDB;
 import me.furt.mexdb.exception.EmptyIndexException;
 import me.furt.mexdb.system.Entry;
